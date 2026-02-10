@@ -1,16 +1,10 @@
 function problem1(users) {
-  let result = [];
+  return Object.keys(users).filter(function (name) {
+    return users[name].interests
+      .join()
+      .toLowerCase()
+      .includes("video games");
+  });
+}
 
-  for (let userName in users) {
-    let interestsArray = users[userName].interests;
-
-    for (let i = 0; i < interestsArray.length; i++) {
-      if (interestsArray[i].includes("Video Games")) {
-        result.push({
-          name: userName
-        });
-        break;
-      }
-    }
-  }
-
+module.exports = problem1;
