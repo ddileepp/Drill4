@@ -14,8 +14,3 @@ function problem1(users) {
     }
   }
 
-  return result;
-}
-
-module.exports = problem1;
-
