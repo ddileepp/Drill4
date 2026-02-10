@@ -1,9 +1,6 @@
 function problem4(users) {
-  let result = {};
-
-  for (let userName in users) {
-    let designation = users[userName].desgination;
-
+  return Object.keys(users).reduce(function (result, userName) {
+    const designation = users[userName].desgination;
     let language = "";
 
     if (designation.includes("Golang")) {
@@ -18,12 +15,11 @@ function problem4(users) {
       if (!result[language]) {
         result[language] = [];
       }
-
       result[language].push(userName);
     }
-  }
 
-  return result;
+    return result;
+  }, {});
 }
 
 module.exports = problem4;
